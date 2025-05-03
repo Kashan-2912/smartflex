@@ -18,4 +18,22 @@ export const syncUser = mutation({
 
         return await ctx.db.insert("users", args);
     }
+});
+
+export const updateUser = mutation({
+    args: {
+        name: v.string(),
+        email: v.string(),
+        image: v.optional(v.string()),
+        clerkId: v.string(),
+    },
+    handler: async (ctx, args) => {
+        const exsitingUser = await ctx.db.query("users")
+        .withIndex("by_clerk_id", (q) => q.eq(("clerkId"), args.clerkId))
+        .first()
+
+        if(!exsitingUser) return
+        
+        return await ctx.db.patch(exsitingUser._id, args)
+    },
 })
