@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 
 interface Position {
@@ -48,24 +48,23 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
 
   return (
     <div
-  ref={divRef}
-  onMouseMove={handleMouseMove}
-  onFocus={handleFocus}
-  onBlur={handleBlur}
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
-  className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden ${className}`} // removed p-8
->
-  <div
-    className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
-    style={{
-      opacity,
-      background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
-    }}
-  />
-  {children}
-</div>
-
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden ${className}`}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
+        style={{
+          opacity,
+          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
+        }}
+      />
+      {children}
+    </div>
   );
 };
 

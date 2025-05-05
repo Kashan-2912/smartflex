@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   ChevronRight,
   Dumbbell,
@@ -11,32 +17,35 @@ import {
   ShieldIcon,
 } from "lucide-react";
 import { USER_PROGRAMS } from "@/constants/index";
-import SpotlightCard from "./SpotlightCard"
+import SpotlightCard from "./SpotlightCard";
 
 const UserPrograms = () => {
   return (
     <div className="w-full pb-24 pt-16 relative">
       <div className="container mx-auto max-w-6xl px-4">
         {/* HEADER- PROGRAM GALLERY */}
-        <div className="bg-card/90 backdrop-blur-sm border border-border rounded-lg overflow-hidden mb-16">
+        <div className="backdrop-blur-sm flex flex-col flex-grow border border-border rounded-lg overflow-hidden mb-16">
           {/* HEADER BAR */}
           <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-background/70">
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
-              <span className="text-sm text-primary font-medium">Program Gallery</span>
+              <span className="text-sm text-primary font-medium">
+                Program Gallery
+              </span>
             </div>
             <div className="text-sm text-muted-foreground">Featured Plans</div>
           </div>
 
           {/* HEADER CONTENT */}
-          <div className="p-8 text-center">
+          <div className="p-8 text-center flex-grow">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-foreground">AI-Generated </span>
               <span className="text-primary">Programs</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10">
-              Explore personalized fitness plans our AI assistant has created for other users
+              Explore personalized fitness plans our AI assistant has created
+              for other users
             </p>
 
             {/* STATS */}
@@ -68,14 +77,18 @@ const UserPrograms = () => {
         {/* Program cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {USER_PROGRAMS.map((program) => (
-            <SpotlightCard key={program.id} spotlightColor="rgba(0, 229, 255, 0.2)">
+            <SpotlightCard
+              key={program.id}
+              spotlightColor="rgba(0, 229, 255, 0.2)"
+            >
               <Card className="h-full border border-border hover:border-primary/50 transition-colors overflow-hidden">
-            
                 {/* Card header with user info */}
                 <div className="flex items-center justify-between px-4 py-2 border-b border-border bg-background/70">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span className="text-sm text-primary">USER.{program.id}</span>
+                    <span className="text-sm text-primary">
+                      USER.{program.id}
+                    </span>
                   </div>
                   <div className="text-sm text-muted-foreground">
                     {program.fitness_level.toUpperCase()}
@@ -140,7 +153,9 @@ const UserPrograms = () => {
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
-                          <h3 className="font-medium text-foreground">{program.diet_plan.title}</h3>
+                          <h3 className="font-medium text-foreground">
+                            {program.diet_plan.title}
+                          </h3>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1">
                           System optimized nutrition
@@ -154,7 +169,9 @@ const UserPrograms = () => {
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
-                          <h3 className="font-medium text-foreground">AI Safety Protocols</h3>
+                          <h3 className="font-medium text-foreground">
+                            AI Safety Protocols
+                          </h3>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1">
                           Protection systems enabled
