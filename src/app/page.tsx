@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import TerminalOverlay from "@/components/TerminalOverlay";
 import UserPrograms from "@/components/UserPrograms";
+import GradientText from "../components/GradientText";
 
 const HomePage = () => {
   return (
@@ -65,16 +64,16 @@ const HomePage = () => {
 
               {/* BUTTON */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                <Button
-                  size="lg"
-                  asChild
-                  className="overflow-hidden bg-primary text-primary-foreground px-8 py-6 text-lg font-medium"
-                >
-                  <Link href={"/generate-program"} className="flex items-center font-mono">
-                    Build Your Program
-                    <ArrowRightIcon className="ml-2 size-5" />
-                  </Link>
-                </Button>
+                <Link href={"/generate-program"} className="flex items-center font-mono">
+                  <GradientText
+                    colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                    animationSpeed={2}
+                    showBorder={true}
+                    className="flex items-center overflow-hidden font-mono bg-transparent px-8 py-6 text-lg font-medium"
+                  >
+                    Build Your Program →
+                  </GradientText>
+                </Link>
               </div>
             </div>
 
