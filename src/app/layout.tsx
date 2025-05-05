@@ -4,6 +4,7 @@ import "./globals.css";
 import ConvexClerkProvider from "@/providers/ConvexClerkProvider";
 import Footer from "../components/Footer";
 import Navbar from "@/components/Navbar";
+import Aurora from "../components/Aurora"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,10 +34,14 @@ export default function RootLayout({
         >
           <Navbar />
 
-          <div className="fixed inset-0 -z-1">
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(var(--cyber-grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--cyber-grid-color)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-          </div>
+            <div className="fixed inset-0 -z-1">
+              <Aurora
+                colorStops={["#0284c7", "#06b6d4", "#3b82f6"]}
+                blend={1}
+                amplitude={1.0}
+                speed={0.5}
+              />
+            </div>
 
           <main className="pt-24 flex-grow">{children}</main>
 
