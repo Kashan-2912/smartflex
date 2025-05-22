@@ -17,7 +17,7 @@ SmartFlex is an AI-powered fitness training app that generates personalized **wo
 
 ## 📸 Demo
 
-![image](https://github.com/user-attachments/assets/ee50e1d5-f563-4715-a884-084f0902acf3)
+![SmartFlex Demo](https://github.com/user-attachments/assets/ee50e1d5-f563-4715-a884-084f0902acf3)
 
 ---
 
@@ -35,19 +35,103 @@ SmartFlex is an AI-powered fitness training app that generates personalized **wo
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+Follow these simple steps to set up the project locally:
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/smartflex-ai.git
 cd smartflex-ai
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
 # or
 yarn install
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
-CLERK_SECRET_KEY=your_clerk_secret
+```
+
+### 3️⃣ Configure Environment Variables
+
+Create a `.env.local` file in the root directory and add the following:
+
+```env
+# Clerk (Auth)
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_VAPI_WORKFLOW_ID=
-NEXT_PUBLIC_VAPI_API_KEY=
-CONVEX_DEPLOYMENT=
-NEXT_PUBLIC_CONVEX_URL=
+
+# Vapi AI
+NEXT_PUBLIC_VAPI_WORKFLOW_ID=your_vapi_workflow_id
+NEXT_PUBLIC_VAPI_API_KEY=your_vapi_api_key
+
+# Convex
+CONVEX_DEPLOYMENT=your_convex_deployment
+NEXT_PUBLIC_CONVEX_URL=your_public_convex_url
+
+# Gemini
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+> 🔑 Make sure you have valid accounts with [Clerk](https://clerk.dev), [Vapi](https://vapi.ai), [Gemini](https://makersuite.google.com), and [Convex](https://convex.dev) to generate these keys.
+
+### 4️⃣ Start the Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the magic 💫
+
+---
+
+## 📁 Folder Structure
+
+```
+smartflex/
+│
+├── components/      # Reusable UI components
+├── pages/           # Next.js routes
+├── api/             # API endpoints
+├── lib/             # AI integrations (Vapi, Gemini)
+├── convex/          # Convex backend logic
+└── styles/          # TailwindCSS styles
+```
+
+---
+
+## 🤖 How It Works
+
+1. **User logs in via Clerk**
+2. **Speaks to the Vapi AI agent**
+3. **Gemini generates a personalized plan**
+4. **Convex stores your plan for easy access later**
+
+---
+
+## 🧠 Powered By
+
+- 🔊 [Vapi AI](https://vapi.ai)
+- 🤖 [Gemini by Google](https://makersuite.google.com/)
+- 🔐 [Clerk Authentication](https://clerk.dev)
+- ⚡ [Convex](https://www.convex.dev)
+
+---
+
+## 🤝 Contributing
+
+Got improvements or feature ideas? Open a pull request or issue — contributions welcome!
+
+---
+
+## 📄 License
+
+MIT License © [Your Name]
+
+---
+
+> 🚀 **Ready to build your own AI fitness trainer?** Fork this repo and let's get fit with SmartFlex!
