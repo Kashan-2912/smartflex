@@ -40,7 +40,7 @@ Follow these simple steps to set up the project locally:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/smartflex-ai.git
+git clone [https://github.com/your-username/smartflex-ai.git](https://github.com/Kashan-2912/smartflex.git)
 cd smartflex-ai
 ```
 
@@ -94,12 +94,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the m
 ```
 smartflex/
 │
-├── components/      # Reusable UI components
-├── pages/           # Next.js routes
-├── api/             # API endpoints
-├── lib/             # AI integrations (Vapi, Gemini)
-├── convex/          # Convex backend logic
-└── styles/          # TailwindCSS styles
+├──  public/  
+├──  convex/       
+├──  src/
+      ├── app/
+      ├── components/
+      ├── constants/
+      ├── lib/
+      ├── providers/
+      ├── middleware.ts
+          
 ```
 
 ---
