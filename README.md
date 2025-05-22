@@ -40,7 +40,7 @@ Follow these simple steps to set up the project locally:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/smartflex-ai.git](https://github.com/Kashan-2912/smartflex.git)
+git clone https://github.com/Kashan-2912/smartflex.git
 cd smartflex-ai
 ```
 
